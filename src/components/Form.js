@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from 'react';
 
 
 
@@ -9,67 +8,71 @@ import './App.css';
 // provide method to display text in form
 
 
-class Forms extends Component {
-    render() {
-        return(
-            constructor() {
-                super();
-                this.state = {
-                    form: " ",
-                    questionnaire: " "
-                };
-                this.handleChange = this.handleChange.bind(this);
-
-            }
-              handleChange(e) {
-                //   console.log("text");
-                this.setState({ [e.target.name]: e.target.value});
-            }
-            render() {
-                return(
-                    <div>
-                        <div className="Form">
-                            <h2>Digital Use Survey</h2>
-                        </div>
-                    <div>
-                        <form>
-                            <label>First Name:</label>
-                            <input
-                              type="text"
-                              name="firstname"
-                              className="firstname"
-                              onChange={this.handleChange} />
-                            <label>lastname Name:</label>
-                            <input
-                              type="text"
-                              name="lastname"
-                              className="lastname"
-                              onChange={this.handleChange} />
-                            <label>Email Address:</label>
-                            <input
-                              type="text"
-                              name="email"
-                              className="emailaddress"
-                              onChange={this.handleChange} />
-                            <label>Phone Number:</label>
-                            <input
-                              type="number"
-                              name="mobile"
-                              className="lastname"
-                              onChange={this.handleChange} />
-                              <label>Zip Code:</label>
-                              <input
-                              type="number"
-                              name="zipcode"
-                              className="zip"
-                              onChange={this.handleChange} />
-                        </form>
-                    </div>
-                  </div>
-                )
-            }      
+// //Form component
+class ContactForm extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        name: '',
+        email:''
+      };
+  
+      this.handleChange = this.handleInputChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
     }
-}
-
-
-export default Forms;
+    
+    handleInputChange(event) {
+      const target = event.target;
+      const value = target.type === 'checkbox' ? target.checked : target.value;
+      const name = target.name;
+      
+      this.setState({
+        [name]: value
+      });
+      console.log('Change detected. State updated' + name + ' = ' + value);
+    }
+  
+    handleSubmit(event) {
+      alert('A form was submitted: ' + this.state.name + ' // ' + this.state.email);
+      event.preventDefault();
+    }
+  
+    render() {
+      return (
+        <div>
+          <form onSubmit={this.handleSubmit} >
+            <div className="form-group">
+              <label for="nameImput">Name</label>
+              <input type="text" name="name" value={this.state.name} onChange={this.handleChange} className="form-control" id="nameImput" placeholder="Name" />
+            </div>
+            <div className="form-group">
+              <label for="emailImput">Name</label>
+              <input name="email" type="email" value={this.state.email} onChange={this.handleChange} className="form-control" id="emailImput" placeholder="email@domain.com" />
+            </div>
+            <input type="submit" value="Submit" className="btn btn-primary" />
+          </form>
+        </div>
+      )
+    }
+  }
+  
+  class MainTitle extends React.Component {
+    render(){
+      return(
+        <h1>React Form example</h1>
+      )
+    }
+  }
+  
+  class App extends React.Component {
+    render(){
+      return(
+        <div>
+          <MainTitle/>
+          <ContactForm/>
+        </div>
+      )
+    }
+  }
+  
+  React.render(<App/>, document.getElementById('app'))

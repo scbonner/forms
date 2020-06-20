@@ -9,7 +9,6 @@ import {
 // App components
 
 import Form from './Form';
-import App from './App';
 // import About from './About';
 // import Projects from './Projects';
 // import Contact from './Contact';
@@ -21,7 +20,7 @@ import App from './App';
 const App = () => {
     return (
     <BrowserRouter>
-        <Form />
+        <App />
         <Switch>
         <Route path="/form" component={Form} />  
         {/* <Route path="/about" component={About} /> 
