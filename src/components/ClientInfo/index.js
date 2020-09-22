@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Client = () => {
+const ClientInfo = () => {
  
  return (
   <div><br></br>
@@ -57,6 +57,7 @@ const Client = () => {
       </label>
     </span>
     </form><br></br><hr></hr>
+    <button>SUBMIT</button>
     </div>
     
 
@@ -65,4 +66,4 @@ const Client = () => {
 }; 
 
 
-  export default Client;
+  export default ClientInfo;

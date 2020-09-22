@@ -22,9 +22,9 @@ const Contacts = () => {
          </label>
        </span>
    
-       <label className="client">Client Input</label>
+       <label className="client"></label>
          <br></br><br></br>
-         <label>Stree Address: 
+         <label>Street Address: 
          <input name="submitted-name" autocomplete="name"></input>
          </label>
        
@@ -46,7 +46,7 @@ const Contacts = () => {
          </label>
        </span>
    
-       <label className="client">Client Input</label>
+       <label className="client"></label>
          <br></br><br></br>
          <label>Phone No.: 
          <input name="submitted-name" autocomplete="name"></input>
@@ -57,8 +57,8 @@ const Contacts = () => {
          <input name="submitted-name" autocomplete="name"></input>
          </label>
        </span>
-       
        </form><br></br><hr></hr>
+       <button>SUBMIT</button>
        </div>
        
    

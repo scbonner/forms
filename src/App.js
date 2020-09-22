@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import Counter from './components/Counter';
-import Client from './components/Client';
-import Contacts from './components/Contacts';
+import AbuserInfo from './components/AbuserInfo';
+import ClientInfo from './components/ClientInfo';
 
 
   
@@ -31,8 +31,8 @@ class App extends Component {
                   
         </p>
       {/* <Counter />   */}
-      <Client />
-      <Contacts />
+      <AbuserInfo />
+      <ClientInfo />
       </div>
 
     );
